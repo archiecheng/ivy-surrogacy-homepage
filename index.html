@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ivy Surrogacy</title>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
@@ -22,18 +22,18 @@
             </a>
           </div>
           <div class="top-bar__social">
-            <a href="#" aria-label="Facebook">
-              <img src="./images/facebook.png" alt="" />
-            </a>
-            <a href="#" aria-label="Instagram">
-              <img src="./images/instagram.png" alt="" />
-            </a>
-            <a href="#" aria-label="TikTok">
-              <img src="./images/tiktok.png" alt="" />
-            </a>
-            <a href="#" aria-label="YouTube">
-              <img src="./images/youtube.png" alt="" />
-            </a>
+            <a href="#" aria-label="Facebook"
+              ><img src="./images/facebook.png" alt=""
+            /></a>
+            <a href="#" aria-label="Instagram"
+              ><img src="./images/instagram.png" alt=""
+            /></a>
+            <a href="#" aria-label="TikTok"
+              ><img src="./images/tiktok.png" alt=""
+            /></a>
+            <a href="#" aria-label="YouTube"
+              ><img src="./images/youtube.png" alt=""
+            /></a>
           </div>
         </div>
       </div>
@@ -42,7 +42,11 @@
           <a class="logo" href="#">
             <img src="./images/surrogacy-logo.png" alt="Ivy Surrogacy logo" />
           </a>
-          <nav id="primary-navigation" class="main-nav" aria-label="Primary navigation">
+          <nav
+            id="primary-navigation"
+            class="main-nav"
+            aria-label="Primary navigation"
+          >
             <ul>
               <li class="has-dropdown dropdown-parent">
                 <button
@@ -83,7 +87,10 @@
                 >
                   Surrogates
                 </button>
-                <div class="dropdown-panel dropdown-panel--single" id="dropdown-surrogates">
+                <div
+                  class="dropdown-panel dropdown-panel--single"
+                  id="dropdown-surrogates"
+                >
                   <div class="dropdown-columns single-column">
                     <div class="dropdown-column">
                       <a href="#">Surrogacy Overview</a>
@@ -106,7 +113,10 @@
                 >
                   Egg Donors
                 </button>
-                <div class="dropdown-panel dropdown-panel--single" id="dropdown-eggdonors">
+                <div
+                  class="dropdown-panel dropdown-panel--single"
+                  id="dropdown-eggdonors"
+                >
                   <div class="dropdown-columns single-column">
                     <div class="dropdown-column">
                       <a href="#">Egg Donation Overview</a>
@@ -118,16 +128,56 @@
                   </div>
                 </div>
               </li>
-              <li class="has-dropdown dropdown-parent dropdown-parent--with-link">
-                <a class="resources-link" href="https://www.ivysurrogacy.com/resources/">Resources</a>
-                <button
-                  class="dropdown-toggle dropdown-toggle--icon"
-                  type="button"
-                  aria-expanded="false"
-                  aria-controls="dropdown-resources"
-                  aria-label="Toggle resources submenu"
-                ></button>
-                <div class="dropdown-panel dropdown-panel--single" id="dropdown-resources">
+              <li
+                class="has-dropdown dropdown-parent dropdown-parent--with-link"
+              >
+                <!-- <div style="display: flex;">
+                  <a class="resources-link" href="https://www.ivysurrogacy.com/resources/">Resources</a>
+                  <button class="dropdown-toggle dropdown-toggle--icon" type="button" aria-expanded="false" aria-controls="dropdown-resources" aria-label="Toggle resources submenu"></button>
+                </div> -->
+                <div style="display: flex;">
+                  <a
+                    class="resources-link"
+                    href="https://www.ivysurrogacy.com/resources/"
+                    >Resources</a
+                  >
+                  <button
+                    class="dropdown-toggle dropdown-toggle--icon"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="dropdown-resources"
+                    aria-label="Toggle resources submenu"
+                    style="
+                      position: relative;
+                      background: none;
+                      border: none;
+                      padding: 0;
+                      cursor: pointer;
+                      width: 24px;
+                      height: 24px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 0;
+                        height: 0;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-top: 5px solid #e68090;
+                        margin-left: 6px;
+                        transition: transform 0.2s ease;
+                      "
+                    ></span>
+                  </button>
+                </div>
+                <div
+                  class="dropdown-panel dropdown-panel--single"
+                  id="dropdown-resources"
+                >
                   <div class="dropdown-columns single-column">
                     <div class="dropdown-column">
                       <a href="#">Blog</a>
@@ -144,40 +194,56 @@
                 </div>
               </li>
               <li><a href="#">About</a></li>
-              <li><a href="https://www.ivysurrogacy.com/contact-us/">Contact</a></li>
+              <li>
+                <a href="https://www.ivysurrogacy.com/contact-us/">Contact</a>
+              </li>
               <li class="login-link"><a href="#">Login / Sign Up</a></li>
             </ul>
           </nav>
-          <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
-            <!-- <span class="menu-icon" aria-hidden="true"></span> -->
-             <img src="./images/more.png" alt="">
+          <button
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <img src="./images/more.png" alt="" />
             <span class="sr-only">Open navigation</span>
           </button>
         </div>
       </div>
     </header>
+
     <!-- Main -->
     <main class="main-content">
       <div class="main-wrapper">
+        <!-- 你的主页内容 -->
       </div>
     </main>
+
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer_content">
         <div class="footer_top">
           <div class="footer_brand">
-            <img src="./images/transparent-logo-2.png" alt="Ivy Surrogacy logo" />
+            <img
+              src="./images/transparent-logo-2.png"
+              alt="Ivy Surrogacy logo"
+            />
             <p>IVY Surrogacy</p>
           </div>
           <div class="footer_column contact">
             <h4>Contact Us</h4>
             <ul>
               <li>
-                <a href="https://maps.apple.com/?address=680%20Brea%20Canyon%20Rd,%20Diamond%20Bar,%20CA%20%2091789">
-                  680 Brea Canyon Rd, Unit 288, Diamond Bar, CA 91789
-                </a>
+                <a
+                  href="https://maps.apple.com/?address=680%20Brea%20Canyon%20Rd,%20Diamond%20Bar,%20CA%20%2091789"
+                  >680 Brea Canyon Rd, Unit 288, Diamond Bar, CA 91789</a
+                >
               </li>
-              <li><a href="mailto:contact@ivysurrogacy.com">contact@ivysurrogacy.com</a></li>
+              <li>
+                <a href="mailto:contact@ivysurrogacy.com"
+                  >contact@ivysurrogacy.com</a
+                >
+              </li>
               <li><a href="tel:+16265451617">(626)545-1617</a></li>
               <li><a href="tel:+16262705774">(626)270-5574</a></li>
               <li><a href="tel:+19495629310">9495629310</a></li>
@@ -253,18 +319,18 @@
         </div>
         <div class="footer_bottom">
           <div class="bottom_left">
-            <a href="#" aria-label="Facebook">
-              <img src="./images/facebook.png" alt="" />
-            </a>
-            <a href="#" aria-label="Instagram">
-              <img src="./images/instagram.png" alt="" />
-            </a>
-            <a href="#" aria-label="TikTok">
-              <img src="./images/tiktok.png" alt="" />
-            </a>
-            <a href="#" aria-label="YouTube">
-              <img src="./images/youtube.png" alt="" />
-            </a>
+            <a href="#" aria-label="Facebook"
+              ><img src="./images/facebook.png" alt=""
+            /></a>
+            <a href="#" aria-label="Instagram"
+              ><img src="./images/instagram.png" alt=""
+            /></a>
+            <a href="#" aria-label="TikTok"
+              ><img src="./images/tiktok.png" alt=""
+            /></a>
+            <a href="#" aria-label="YouTube"
+              ><img src="./images/youtube.png" alt=""
+            /></a>
           </div>
           <div class="bottom_middle">
             © 2025 Ivy Surrogacy. All rights reserved.
@@ -278,6 +344,7 @@
         </div>
       </div>
     </footer>
+
     <script>
       (function () {
         const body = document.body;
