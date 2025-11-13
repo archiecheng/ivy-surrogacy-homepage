@@ -44,10 +44,105 @@
           </a>
           <nav id="primary-navigation" class="main-nav" aria-label="Primary navigation">
             <ul>
-              <li class="has-dropdown"><a href="#">Intended Parents</a></li>
-              <li class="has-dropdown"><a href="#">Surrogates</a></li>
-              <li class="has-dropdown"><a href="#">Egg Donors</a></li>
-              <li class="has-dropdown"><a href="#">Resources</a></li>
+              <li class="has-dropdown dropdown-parent">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="dropdown-intended"
+                >
+                  Intended Parents
+                </button>
+                <div class="dropdown-panel" id="dropdown-intended">
+                  <div class="dropdown-columns">
+                    <div class="dropdown-column">
+                      <div class="dropdown-heading">Find a Surrogate</div>
+                      <a href="#">Surrogacy Parent Overview</a>
+                      <a href="#">Process for Intended Parents</a>
+                      <a href="#">Surrogacy Cost</a>
+                      <a href="#">Parents' Application</a>
+                      <a href="#">FAQ for Intended Parents</a>
+                    </div>
+                    <div class="dropdown-column">
+                      <div class="dropdown-heading">Find an Egg Donor</div>
+                      <a href="#">Egg Donation Parent Overview</a>
+                      <a href="#">Process for Intended Parents</a>
+                      <a href="#">Egg Donation Cost</a>
+                      <a href="#">Egg Donation Database</a>
+                      <a href="#">Find an Egg Donor FAQ</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown dropdown-parent">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="dropdown-surrogates"
+                >
+                  Surrogates
+                </button>
+                <div class="dropdown-panel dropdown-panel--single" id="dropdown-surrogates">
+                  <div class="dropdown-columns single-column">
+                    <div class="dropdown-column">
+                      <a href="#">Surrogacy Overview</a>
+                      <a href="#">Surrogate Requirements</a>
+                      <a href="#">Surrogate Compensation</a>
+                      <a href="#">Surrogacy Process</a>
+                      <a href="#">Surrogate Application</a>
+                      <a href="#">Surrogate Referral Program</a>
+                      <a href="#">Become a Surrogate FAQ</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown dropdown-parent">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="dropdown-eggdonors"
+                >
+                  Egg Donors
+                </button>
+                <div class="dropdown-panel dropdown-panel--single" id="dropdown-eggdonors">
+                  <div class="dropdown-columns single-column">
+                    <div class="dropdown-column">
+                      <a href="#">Egg Donation Overview</a>
+                      <a href="#">Compensation for Egg Donors</a>
+                      <a href="#">Egg Donation Process</a>
+                      <a href="#">Egg Donor Application</a>
+                      <a href="#">FAQ</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown dropdown-parent dropdown-parent--with-link">
+                <a class="resources-link" href="https://www.ivysurrogacy.com/resources/">Resources</a>
+                <button
+                  class="dropdown-toggle dropdown-toggle--icon"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="dropdown-resources"
+                  aria-label="Toggle resources submenu"
+                ></button>
+                <div class="dropdown-panel dropdown-panel--single" id="dropdown-resources">
+                  <div class="dropdown-columns single-column">
+                    <div class="dropdown-column">
+                      <a href="#">Blog</a>
+                      <div class="dropdown-heading">Tools</div>
+                      <a href="#">PGT-A euploid probability calculator</a>
+                      <a href="#">Embryo Transfer Success Rate Calculator</a>
+                      <a href="#">Due Date Calculator</a>
+                      <a href="#">Pregnancy Weight Gain Calculator</a>
+                      <a href="#">BMI Calculator</a>
+                      <a href="#">Height and Weight Converter</a>
+                      <a href="#">Surrogacy by State</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
               <li><a href="#">About</a></li>
               <li><a href="https://www.ivysurrogacy.com/contact-us/">Contact</a></li>
               <li class="login-link"><a href="#">Login / Sign Up</a></li>
@@ -185,16 +280,53 @@
     </footer>
     <script>
       (function () {
-        const toggle = document.querySelector(".menu-toggle");
-        const nav = document.getElementById("primary-navigation");
-        if (!toggle || !nav) return;
+        const body = document.body;
+        const navToggle = document.querySelector(".menu-toggle");
+        const dropdownButtons = document.querySelectorAll(".dropdown-toggle");
+        const dropdownParents = document.querySelectorAll(".dropdown-parent");
 
-        toggle.addEventListener("click", () => {
-          const isOpen = document.body.classList.toggle("nav-open");
-          toggle.setAttribute("aria-expanded", String(isOpen));
-          toggle.querySelector(".sr-only").textContent = isOpen
-            ? "Close navigation"
-            : "Open navigation";
+        const closeDropdowns = () => {
+          dropdownButtons.forEach((btn) =>
+            btn.setAttribute("aria-expanded", "false")
+          );
+          dropdownParents.forEach((parent) =>
+            parent.classList.remove("dropdown-open")
+          );
+        };
+
+        if (navToggle) {
+          navToggle.addEventListener("click", () => {
+            const isOpen = body.classList.toggle("nav-open");
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+            const sr = navToggle.querySelector(".sr-only");
+            if (sr) {
+              sr.textContent = isOpen ? "Close navigation" : "Open navigation";
+            }
+            if (!isOpen) {
+              closeDropdowns();
+            }
+          });
+        }
+
+        dropdownButtons.forEach((btn) => {
+          btn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const parent = btn.closest(".dropdown-parent");
+            const isExpanded = btn.getAttribute("aria-expanded") === "true";
+
+            closeDropdowns();
+
+            if (!isExpanded && parent) {
+              parent.classList.add("dropdown-open");
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".dropdown-parent")) {
+            closeDropdowns();
+          }
         });
       })();
     </script>
